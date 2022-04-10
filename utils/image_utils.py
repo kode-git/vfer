@@ -20,7 +20,8 @@ class ImageWorker():
             dest_path (str): Destination path to store resized images
         """        
         count = 0
-        if not os.path.isdir(dest_path):
+        print("This is:", self.navigate_path(dest_path))
+        if self.navigate_path(dest_path) == 0:
             os.mkdir(dest_path)
         for file in glob.glob(path + "/*." + format_img):
             img = cv2.imread(file, cv2.IMREAD_UNCHANGED)
@@ -42,7 +43,6 @@ class ImageWorker():
         for dir in os.listdir(path):
             if os.path.isfile(os.path.join(path, dir)):
                 count += 1
-        print('Counter for', path, ':', count)
         return count
 
 
