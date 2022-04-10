@@ -9,10 +9,10 @@ class ImageResizer():
     def __init__(self) -> None:
          pass
 
-    def resize_image(self, path, filename, dest, width, height):
+    def resize_image(self, img, filename, dest, width, height):
     
-        img = cv2.imread(str.join(path, filename), cv2.IMREAD_UNCHANGED)
-        print('Original Dimensions : ',img.shape)
+        # img = cv2.imread(str.join(path, filename), cv2.IMREAD_UNCHANGED)
+        # print('Original Dimensions : ',img.shape)
 
         # new dimensions
         dim = (width, height)
@@ -24,6 +24,7 @@ class ImageResizer():
     
         cv2.imwrite(os.path.join(dest , filename), img)
         cv2.waitKey(0)
+        return resized
 
 
     def navigate_path(path):
