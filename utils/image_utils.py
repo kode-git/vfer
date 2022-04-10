@@ -25,7 +25,7 @@ class ImageWorker():
             img = cv2.imread(file, cv2.IMREAD_UNCHANGED)
             resized = cv2.resize(img, (224,224), interpolation=cv2.INTER_CUBIC)
             print('Resized writing for', dest_path + "resized_on_" + source_type + "_" + str(count) + "." + format_img )
-            cv2.imwrite(dest_path + "resized_" + str(count) + "." + format_img, resized)
+            cv2.imwrite(dest_path + "resized_on_" + source_type + "_" + str(count) + "."+ format_img, resized)
             count += 1
 
     def navigate_path(self, path):
@@ -53,6 +53,7 @@ if __name__ == "__main__":
     origin_path = input("Tell the origin path: ")
     dest_path = input("Tell the destination path: ")
     format = input("Tell the images format: ")
-    iw.format_converter(origin_path, format, dest_path)
+    source_type = input('Tell me the format: ')
+    iw.format_converter(origin_path, format, source_type, dest_path)
 
 
