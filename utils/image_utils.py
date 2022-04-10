@@ -20,7 +20,8 @@ class ImageWorker():
             dest_path (str): Destination path to store resized images
         """        
         count = 0
-        os.mkdir(dest_path)
+        if not os.path.isdir(dest_path):
+            os.mkdir(dest_path)
         for file in glob.glob(path + "/*." + format_img):
             img = cv2.imread(file, cv2.IMREAD_UNCHANGED)
             resized = cv2.resize(img, (224,224), interpolation=cv2.INTER_CUBIC)
