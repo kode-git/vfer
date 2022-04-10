@@ -20,9 +20,6 @@ class ImageWorker():
             cv2.imwrite(dest_path + "resized_" + str(count) + "." + format, resized)
             count += 1
 
-        
-
-
     def navigate_path(self, path):
         count = 0
         for dir in os.listdir(path):
