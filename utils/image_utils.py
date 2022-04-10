@@ -10,17 +10,33 @@ class ImageWorker():
     def __init__(self) -> None:
          pass
 
-    def format_converter(self, path, format, dest_path):
+    def format_converter(self, path, format, source_type, dest_path):
+        """format_converter str
+
+        Args:
+            path (str): The source path of the images folder 
+            format (str): Format of the images in the folder
+            source_type (str): Type of the dataset 
+            dest_path (str): Destination path to store resized images
+        """        
         count = 0
         os.mkdir(dest_path)
         for file in glob.glob(path + "/*." + format):
             img = cv2.imread(file, cv2.IMREAD_UNCHANGED)
             resized = cv2.resize(img, (224,224), interpolation=cv2.INTER_CUBIC)
-            print('Resized writing for', dest_path + "resized_" + str(count) + "." + format )
+            print('Resized writing for', dest_path + "resized_on_" + source_type + "_" + str(count) + "." + format )
             cv2.imwrite(dest_path + "resized_" + str(count) + "." + format, resized)
             count += 1
 
     def navigate_path(self, path):
+        """navigate_path
+
+        Args:
+            path (str): Path to navigate and counting number of files
+
+        Returns:
+            int : the total amount of file in the directory specified by the path
+        """        
         count = 0
         for dir in os.listdir(path):
             if os.path.isfile(os.path.join(path, dir)):
