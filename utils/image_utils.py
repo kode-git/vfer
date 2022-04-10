@@ -10,7 +10,7 @@ class ImageWorker():
     def __init__(self) -> None:
          pass
 
-    def format_converter(self, path, format, source_type, dest_path):
+    def format_converter(self, path, format_img, source_type, dest_path):
         """format_converter str
 
         Args:
@@ -21,11 +21,11 @@ class ImageWorker():
         """        
         count = 0
         os.mkdir(dest_path)
-        for file in glob.glob(path + "/*." + format):
+        for file in glob.glob(path + "/*." + format_img):
             img = cv2.imread(file, cv2.IMREAD_UNCHANGED)
             resized = cv2.resize(img, (224,224), interpolation=cv2.INTER_CUBIC)
-            print('Resized writing for', dest_path + "resized_on_" + source_type + "_" + str(count) + "." + format )
-            cv2.imwrite(dest_path + "resized_" + str(count) + "." + format, resized)
+            print('Resized writing for', dest_path + "resized_on_" + source_type + "_" + str(count) + "." + format_img )
+            cv2.imwrite(dest_path + "resized_" + str(count) + "." + format_img, resized)
             count += 1
 
     def navigate_path(self, path):
