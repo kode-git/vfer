@@ -32,7 +32,10 @@ Given an eterogeneous dataset on a fine-tuned transformer, we had to manage some
 <p align="center">
   <img src="ViT_Architecture.png" />
 </p>
-Overview of the model: we split an image into fixed-size patches, linearly embed each of them, add position embeddings, and feed the resulting sequence of vectors to a standard Transformer encoder. In order to perform classification, we use the standard approach of adding an extra learnable "classification token" to the sequence.
+
+Overview of the model: The input image is split into fixed-sized patches; the embedding phase is preceded by a convolutional layer with a kernel 16x16 with a stride of 16x16. The output of the convolution is then used for the embedding phase where the resulting vector is given by the sum of the position embedding and a linear embedding in a projection space of 768 dimensions. The embedded patches are then processed by a set of 11 sequential Transformer Encoders.
+For the classification task, the final layer is a linear layer with a 8 dimensional output for our eight emotions.
+The model we rely on is pretrained on ImageNet and finetuned with the datased described above.
 
 **Source:** https://github.com/google-research/vision_transformer
 ## Authors
