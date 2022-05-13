@@ -8,7 +8,7 @@
 </p>
 
 This project has the aim to build an efficient Visual Transformer for the Facial Emotion Recognition (FER) task. Project is interally on Python Notebook, 
-hosted on Google Colab with a runtime environment given by NVIDIA P100 or NVIDIA T4 GPU. 
+hosted on Google Colab with a runtime environment given by NVIDIA P100 setup. 
 
 ## Dataset 
 
