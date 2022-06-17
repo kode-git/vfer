@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/CUDA-11.3.0-green" alt="alternatetext">
 </p>
 
-This project has the aim to build an efficient Visual Transformer for the Facial Emotion Recognition (FER) task. Project is interally on Python Notebook, 
+This project has the aim to build an efficient Vision Transformer for the Facial Emotion Recognition (FER) task. Project is interally on Python Notebook, 
 hosted on Google Colab with a runtime environment given by NVIDIA P100 setup. 
 
 ## Dataset 
