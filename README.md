@@ -1,4 +1,4 @@
-# Visual Transformer for Facial Emotion Recognition (FER)
+# Vision Transformer for Facial Emotion Recognition (FER)
 
 <p>
   <img src="https://img.shields.io/static/v1?label=build&message=passing&color=%3CCOLOR%3E" alt="alternatetext">
