@@ -1,3 +1,6 @@
+# ⚠️ **WARNING**
+This project has only academic pourpose and it is not mantained over time. So please, don't consider to use it directly after some years of inactivity and unsupported. May some libraries can be deprecated or worked different with latest versions.
+
 # Vision Transformer for Facial Emotion Recognition (VFER)
 
 <p>
